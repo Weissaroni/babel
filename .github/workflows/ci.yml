@@ -134,7 +134,7 @@ jobs:
           key: yarn-${{ hashFiles('yarn.lock') }}
       - name: Install
         run: yarn install
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: babel-artifact
       - name: Lint
@@ -172,7 +172,7 @@ jobs:
           # Deduplicate dependencies, because duplicate copies of graceful-fs cause
           # problems with the "path" module: https://github.com/facebook/jest/issues/9656
           yarn dedupe
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: babel-artifact
       - name: Generate runtime helpers
@@ -249,7 +249,7 @@ jobs:
           key: yarn-${{ hashFiles('yarn.lock') }}
       - name: Install
         run: yarn install
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: babel-artifact
       - name: Generate runtime helpers
@@ -280,7 +280,7 @@ jobs:
           key: yarn-${{ hashFiles('yarn.lock') }}
       - name: Install
         run: yarn install
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: babel-artifact
       - name: Download tests
@@ -331,7 +331,7 @@ jobs:
           # The "Support self-references on old Node.js" step mutates the
           # package.json file, causing a yarn.lock update.
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: babel-artifact
       - name: Generate runtime helpers
@@ -453,7 +453,7 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: "*"
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: verdaccio-workspace
           path: /tmp/verdaccio-workspace
